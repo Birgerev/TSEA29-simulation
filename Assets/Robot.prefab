@@ -205,13 +205,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Styrmodul
   targetAnglePID:
-    Kp: 0
+    Kp: 0.03
     Ki: 0
-    Kd: 0
+    Kd: 0.004
     outputMin: -1
     outputMax: 1
     iTermLimit: 0
-    rateFilter: 0
+    rateFilter: 0.3
+  targetAnglePIDVisualizer:
+    window: 5
+    width: 0.4
+    height: 0.15
+    gap: 0.03
+    outputRange: 1
+    errorRange: 45
+    title: PID
+    backgroundColor: {r: 0.05, g: 0.05, b: 0.05, a: 0.8}
+    padding: 0.02
+    titleSpace: 0.03
+    legendSpace: 0.07
   leftMotor: {fileID: 5077229784263033804}
   rightMotor: {fileID: 4073766177399153563}
 --- !u!54 &1423311887028140264

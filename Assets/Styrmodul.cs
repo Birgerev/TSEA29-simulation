@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Styrmodul : MonoBehaviour
 {
+	public TargetAnglePID targetAnglePID;
 	private float _targetAngle;
 	private float _currentAngle;
 	private float _targetSpeed;
@@ -36,9 +37,10 @@ public class Styrmodul : MonoBehaviour
 	private void MotorsTurn()
 	{
 		// How quick should we turn? Value between -1 & 1, decided by PID-agorithm
-		float turnSpeed = 1; // TODO decided by PID-agorithm
+		float turnSpeed = targetAnglePID.StepAngle(_targetAngle, _currentAngle, Time.deltaTime); // TODO decided by PID-agorithm
 
-		SetMotorPower(turnSpeed, -turnSpeed);
+
+		SetMotorPower(-turnSpeed, turnSpeed);
 	}
 
 	private void SetMotorPower(float leftPower, float rightPower)
