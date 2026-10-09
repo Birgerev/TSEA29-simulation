@@ -2,16 +2,14 @@ using UnityEngine;
 
 public class Kommunikationsmodul : MonoBehaviour
 {
+	public float targetAngle;
+	public float targetSpeed;
+
     // Update is called once per frame
     void Update()
     {
         var styrmodul = GetComponent<Styrmodul>();
 		
-		// Update current state
-		styrmodul.currentAngle = transform.eulerAngles.y;
-		
-		// Update target values
-		styrmodul.targetAngle = 90; // TODO try alternating
-		// styrmodul.targetSpeed = 0; //TODO testing
-    }
+		styrmodul.UpdateValues(targetAngle, transform.eulerAngles.y, targetSpeed);
+	}
 }
