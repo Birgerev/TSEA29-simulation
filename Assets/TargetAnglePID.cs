@@ -10,11 +10,7 @@ public class TargetAnglePID : PID
 	private float _rate;
 	bool _hasPrev;
 
-	public TargetAnglePID(float kp, float ki, float kd, float rateFilter) : base(kp, ki, kd) {
-		this.rateFilter = rateFilter;
-	}
-
-    public float UpdateAngle(float targetAngle, float currentAngle, float dt)
+    public float StepAngle(float targetAngle, float currentAngle, float dt)
     {
 		float error = WrapAngle(targetAngle - currentAngle);
 

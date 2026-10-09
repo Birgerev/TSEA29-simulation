@@ -8,10 +8,8 @@ public class PID
 
     float iTerm;
 
-    public PID(float kp, float ki, float kd)
-    {
-        Kp = kp; Ki = ki; Kd = kd;
-    }
+	public PIDSample Last { get; private set; }
+
     // error: setpoint - measurement
     // rate:  derivative of the measurement (e.g. gyro rate), so D needs no differentiation
     public float Step(float error, float rate, float dt)
@@ -20,8 +18,13 @@ public class PID
         iTerm += Ki * error * dt;
         iTerm = Clamp(iTerm, -iTermLimit, iTermLimit);
 
-        float output = Kp * error + iTerm - Kd * rate;
-        return Clamp(output, outputMin, outputMax);
+
+		float p = Kp * error;
+		float d = -Kd * rate;
+		float output = Clamp(p + iTerm + d, outputMin, outputMax);
+
+		Last = new PIDSample { error = error, rate = rate, p = p, i = iTerm, d = d, output = output };
+		return Clamp(output, outputMin, outputMax);
     }
 
     public void Reset()
