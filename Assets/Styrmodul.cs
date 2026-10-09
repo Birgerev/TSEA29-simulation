@@ -21,11 +21,25 @@ public class Styrmodul : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //TODO PID
-
-		// Just testing forward
-		SetMotorPower(_targetSpeed, _targetSpeed);
+		// If there is any target speed, move, otherwise turn.
+		if(Mathf.Abs(_targetSpeed) > 0.1f)
+			MotorsMoving();
+		else
+			MotorsTurn();
     }
+
+	private void MotorsMoving()
+	{
+		SetMotorPower(_targetSpeed, _targetSpeed);
+	}
+
+	private void MotorsTurn()
+	{
+		// How quick should we turn? Value between -1 & 1, decided by PID-agorithm
+		float turnSpeed = 1; // TODO decided by PID-agorithm
+
+		SetMotorPower(turnSpeed, -turnSpeed);
+	}
 
 	private void SetMotorPower(float leftPower, float rightPower)
 	{
