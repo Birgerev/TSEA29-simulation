@@ -1,17 +1,22 @@
+using Unity.Collections;
 using UnityEngine;
 
 public class Styrmodul : MonoBehaviour
 {
-	public float targetAngle = 0;
-	public float currentAngle = 0;
-	
-	[Space]
-
-	public float targetSpeed;
+	private float _targetAngle;
+	private float _currentAngle;
+	private float _targetSpeed;
 
 	[Space]
 	public DCMotor leftMotor;
 	public DCMotor rightMotor;
+
+	public void UpdateValues(float targetAngle, float currentAngle, float targetSpeed) 
+	{
+		_targetAngle = targetAngle;
+		_currentAngle = currentAngle;
+		_targetSpeed = targetSpeed;
+	}
 
     // Update is called once per frame
     void Update()
@@ -19,7 +24,7 @@ public class Styrmodul : MonoBehaviour
         //TODO PID
 
 		// Just testing forward
-		SetMotorPower(targetSpeed, targetSpeed);
+		SetMotorPower(_targetSpeed, _targetSpeed);
     }
 
 	private void SetMotorPower(float leftPower, float rightPower)
