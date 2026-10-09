@@ -190,6 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187086a8d328dda4f914cb10b06e3d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kommunikationsmodul
+  wallSensor: {fileID: 0}
+  wallStopDistance: 0.3
   targetAngle: 0
   targetSpeed: 0
 --- !u!114 &6093756865572962198
@@ -206,11 +208,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Styrmodul
   targetAnglePID:
     Kp: 0.03
-    Ki: 0
-    Kd: 0.004
+    Ki: 0.3
+    Kd: 0.015
     outputMin: -1
     outputMax: 1
-    iTermLimit: 0
+    iTermLimit: 0.25
     rateFilter: 0.3
   targetAnglePIDVisualizer:
     window: 5
