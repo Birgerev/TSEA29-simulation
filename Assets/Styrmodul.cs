@@ -4,6 +4,8 @@ using UnityEngine;
 public class Styrmodul : MonoBehaviour
 {
 	public TargetAnglePID targetAnglePID;
+	public PIDVisualizer targetAnglePIDVisualizer;
+	
 	private float _targetAngle;
 	private float _currentAngle;
 	private float _targetSpeed;
@@ -37,8 +39,10 @@ public class Styrmodul : MonoBehaviour
 	private void MotorsTurn()
 	{
 		// How quick should we turn? Value between -1 & 1, decided by PID-agorithm
-		float turnSpeed = targetAnglePID.StepAngle(_targetAngle, _currentAngle, Time.deltaTime); // TODO decided by PID-agorithm
+		float turnSpeed = targetAnglePID.StepAngle(_targetAngle, _currentAngle, Time.deltaTime);
 
+		// Update visualizer
+		targetAnglePIDVisualizer.Update(targetAnglePID);
 
 		SetMotorPower(-turnSpeed, turnSpeed);
 	}
@@ -50,5 +54,10 @@ public class Styrmodul : MonoBehaviour
 
 		leftMotor.duty = Mathf.Clamp01(Mathf.Abs(leftPower));
 		rightMotor.duty = Mathf.Clamp01(Mathf.Abs(rightPower));
+	}
+
+	private void OnDrawGizmos()
+	{
+		targetAnglePIDVisualizer.DrawGizmos(transform.position + Vector3.up * .5f);
 	}
 }
