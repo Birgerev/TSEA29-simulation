@@ -26,7 +26,7 @@ public class TargetAnglePID : PID
 		// Low-pass: move part of the way toward the new sample each step
 		_rate += rateFilter * (rawRate - _rate);
 
-		return Update(error, _rate, dt);
+		return Step(error, _rate, dt);
 	}
 
 	static float WrapAngle(float a)

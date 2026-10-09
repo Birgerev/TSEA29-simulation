@@ -14,7 +14,7 @@ public class PID
     }
     // error: setpoint - measurement
     // rate:  derivative of the measurement (e.g. gyro rate), so D needs no differentiation
-    public float Update(float error, float rate, float dt)
+    public float Step(float error, float rate, float dt)
     {
         // Accumulating Ki * error (instead of error alone) means changing Ki live doesn't cause a jump
         iTerm += Ki * error * dt;
