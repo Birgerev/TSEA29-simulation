@@ -557,10 +557,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot
       objectReference: {fileID: 0}
-    - target: {fileID: 6093756865572962198, guid: a3e98d302ba634a499c55e4acdad4213, type: 3}
-      propertyPath: targetSpeed
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6379259199835626267, guid: a3e98d302ba634a499c55e4acdad4213, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5

@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DCMotor
   DIR: 0
   duty: 0
-  stallForce: 3
-  maxSpeed: 1
+  stallForce: 5
+  maxSpeed: 3
   deadband: 0.2
   lateralGrip: 10
 --- !u!1 &1519016938653172419
@@ -241,7 +241,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010287309927781997}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1a9ec5ca7b968de43a77ef530b2380d4, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DCMotor
   DIR: 0
   duty: 0
-  stallForce: 3
-  maxSpeed: 1
+  stallForce: 5
+  maxSpeed: 3
   deadband: 0.2
   lateralGrip: 10
