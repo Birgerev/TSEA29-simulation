@@ -218,13 +218,13 @@ MonoBehaviour:
     rateFilter: 0.3
   targetAnglePIDVisualizer:
     window: 5
-    width: 0.4
-    height: 0.15
+    width: 1.24
+    height: 0.64
     gap: 0.03
     outputRange: 1
     errorRange: 45
     title: PID
-    backgroundColor: {r: 0.05, g: 0.05, b: 0.05, a: 0.8}
+    backgroundColor: {r: 0.0020914965, g: 0.0037499664, b: 0.009433985, a: 0.5176471}
     padding: 0.02
     titleSpace: 0.03
     legendSpace: 0.07
