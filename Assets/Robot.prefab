@@ -176,6 +176,7 @@ Transform:
   - {fileID: 3915552959735578570}
   - {fileID: 4631318347216777191}
   - {fileID: 5388110291176654132}
+  - {fileID: 9075212109639589431}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4000318731700370849
@@ -190,10 +191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187086a8d328dda4f914cb10b06e3d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kommunikationsmodul
-  wallSensor: {fileID: 0}
-  wallStopDistance: 0.3
+  wallSensor: {fileID: 439821867928079303}
+  wallStopDistance: 0.05
   targetAngle: 0
   targetSpeed: 0
+  turnDuration: 1
 --- !u!114 &6093756865572962198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +371,54 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4697782363968636723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9075212109639589431}
+  - component: {fileID: 439821867928079303}
+  m_Layer: 0
+  m_Name: WallSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9075212109639589431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697782363968636723}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6379259199835626267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &439821867928079303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697782363968636723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5cc99d80342344b87a0379b35aef7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WallSensor
+  sensorRange: 0.8
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &5466224486885279102
 GameObject:
   m_ObjectHideFlags: 0
