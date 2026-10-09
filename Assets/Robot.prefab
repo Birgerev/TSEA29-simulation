@@ -47,7 +47,7 @@ MonoBehaviour:
   DIR: 0
   duty: 0
   stallForce: 5
-  maxSpeed: 3
+  maxSpeed: 2
   deadband: 0.2
   lateralGrip: 10
   gizmoScale: 0.05
@@ -190,6 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187086a8d328dda4f914cb10b06e3d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Kommunikationsmodul
+  targetAngle: 0
+  targetSpeed: 0
 --- !u!114 &6093756865572962198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,9 +204,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8cae083c584c644b14fe70ffd3d61b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Styrmodul
-  targetAngle: 0
-  currentAngle: 0
-  targetSpeed: 0
+  targetAnglePID:
+    Kp: 0
+    Ki: 0
+    Kd: 0
+    outputMin: -1
+    outputMax: 1
+    iTermLimit: 0
+    rateFilter: 0
   leftMotor: {fileID: 5077229784263033804}
   rightMotor: {fileID: 4073766177399153563}
 --- !u!54 &1423311887028140264
@@ -395,7 +402,7 @@ MonoBehaviour:
   DIR: 0
   duty: 0
   stallForce: 5
-  maxSpeed: 3
+  maxSpeed: 2
   deadband: 0.2
   lateralGrip: 10
   gizmoScale: 0.05
