@@ -195,7 +195,7 @@ MonoBehaviour:
   wallStopDistance: 0.05
   targetAngle: 0
   targetSpeed: 0
-  turnDuration: 1
+  turnDuration: 2
 --- !u!114 &6093756865572962198
 MonoBehaviour:
   m_ObjectHideFlags: 0
